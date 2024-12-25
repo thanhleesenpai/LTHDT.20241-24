@@ -9,11 +9,11 @@ public class BellmanFord extends GraphAlgorithm {
     public BellmanFord() {
         super();  // Gọi constructor của lớp cha
     }
-//
-//    public  BellmanFord (boolean directed) {
-//        this.directed = directed;
-//        nodes = new HashSet<>();
-//    }
+
+    public  BellmanFord (boolean directed) {
+        this.directed = directed;
+        nodes = new HashSet<>();
+    }
 
     public Stack<Node> animatePathbf(Node start, Node end) {
         Stack<Node> path = new Stack<>();

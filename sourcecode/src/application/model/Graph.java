@@ -76,6 +76,7 @@ public class Graph {
             ga.addEdge(fromNode, toNode, weight);
             adj.addEdge(fromNode, toNode, weight);
             bf.addEdge(fromNode, toNode, weight);
+            fl.addEdge(fromNode, toNode, weight);
             System.out.println ("Edge added Successfully");
         }
     }

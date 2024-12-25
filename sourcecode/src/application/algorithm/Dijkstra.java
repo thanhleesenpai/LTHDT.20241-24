@@ -11,10 +11,10 @@ public class Dijkstra extends GraphAlgorithm {
         super();
     }
 
-//    public Dijkstra(boolean directed) {
-//        this.directed = directed;
-//        nodes = new HashSet<>();
-//    }
+    public Dijkstra(boolean directed) {
+        this.directed = directed;
+        nodes = new HashSet<>();
+    }
 
     public String DijkstraShortestPath(Node start, Node end) {
 
