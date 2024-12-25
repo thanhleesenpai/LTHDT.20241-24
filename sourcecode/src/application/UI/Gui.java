@@ -64,7 +64,7 @@ public class Gui {
         GridPane.setValignment(SearchButton, VPos.CENTER);
         GridPane.setHalignment(SearchButton, HPos.CENTER);
 
-        SearchButton.setOnAction(_ -> {
+        SearchButton.setOnAction(event -> {
             if(nameField.getText().isEmpty()) {
                 showAlert(Alert.AlertType.ERROR, gridPane.getScene().getWindow(), "Error!", "Please enter name");
             }else if(toField.getText().isEmpty()) {
@@ -130,9 +130,9 @@ public class Gui {
 
         final String[] str = new String[1];
         ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList(typeOfNodes));
-        EventHandler<ActionEvent> newEvent = _ -> {
+        EventHandler<ActionEvent> newEvent = event  -> {
             str[0] = comboBox.getValue();
-            SearchButton.setOnAction(_ -> printGraph.animatePathDijkstra(pane,nameField.getText(),toField.getText(),str[0]));
+            SearchButton.setOnAction(event1 -> printGraph.animatePathDijkstra(pane,nameField.getText(),toField.getText(),str[0]));
         };
 
         comboBox.setLayoutX(285);
@@ -176,9 +176,9 @@ public class Gui {
 
         final String[] str = new String[1];
         ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList(typeOfNodes));
-        EventHandler<ActionEvent> newEvent = _ -> {
+        EventHandler<ActionEvent> newEvent = event -> {
             str[0] = comboBox.getValue();
-            searchButton.setOnAction(_ -> {
+            searchButton.setOnAction(event1 -> {
                 String from = nameField.getText();
                 String to = toField.getText();
 
@@ -261,9 +261,9 @@ public class Gui {
 
         final String[] str = new String[1];
         ComboBox<String> comboBox = new ComboBox<>(FXCollections.observableArrayList(typeOfNodes));
-        EventHandler<ActionEvent> newEvent = _ -> {
+        EventHandler<ActionEvent> newEvent = event -> {
             str[0] = comboBox.getValue();
-            searchButton.setOnAction(_ -> {
+            searchButton.setOnAction(event1 -> {
                 String from = nameField.getText();
                 String to = toField.getText();
 
