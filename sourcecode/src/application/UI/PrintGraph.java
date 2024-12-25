@@ -180,7 +180,7 @@ public class PrintGraph {
     }
 
     private void enableEdgeDelete(Pane pane, final Line line, Edge edge) {
-        line.setOnMouseReleased(_ -> {
+        line.setOnMouseReleased(mouseEvent -> {
             line.getScene().setCursor(Cursor.HAND);
             if (deleteEdge.isSelected()) {
                 graph.DeleteEdge(edge.getSource().getName(), edge.getDestination().getName());

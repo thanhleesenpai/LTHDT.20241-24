@@ -1,4 +1,4 @@
-package application.main;
+package application;
 
 import application.UI.Gui;
 import javafx.application.Application;
@@ -106,7 +106,7 @@ public class Main extends Application {
         };
 
         // Help functionality
-        help.setOnAction(_ -> {
+        help.setOnAction(event1 -> {
             Alert helpAlert = new Alert(Alert.AlertType.INFORMATION);
             helpAlert.setTitle("Help Menu");
             helpAlert.setHeaderText("Routing Algorithms Help");
@@ -123,7 +123,7 @@ public class Main extends Application {
         });
 
         // Quit functionality
-        quit.setOnAction(_ -> {
+        quit.setOnAction(event1 -> {
             Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to quit?", ButtonType.YES, ButtonType.NO);
             confirmAlert.showAndWait().ifPresent(response -> {
                 if (response == ButtonType.YES) {
