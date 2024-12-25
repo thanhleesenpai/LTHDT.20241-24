@@ -33,6 +33,14 @@ public class Node {
         return edges;
     }
 
+    public double getNodeX() {
+        return x;
+    }
+
+    public double getNodeY() {
+        return y;
+    }
+
     public String getName() {
         return name;
     }

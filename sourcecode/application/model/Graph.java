@@ -5,7 +5,7 @@ import application.algorithm.*;
 import java.util.*;
 public class Graph {
     private final LinkedList<Node> nodes = new LinkedList<>();
-    private final GraphAlgorithm ga = new GraphAlgorithm();
+    private final GraphAlgorithm ga = new GraphAlgorithm(true);
     private final Dijkstra adj = new Dijkstra();
     private final BellmanFord bf = new BellmanFord();
     private final Flooding fl = new Flooding();
@@ -76,7 +76,6 @@ public class Graph {
             ga.addEdge(fromNode, toNode, weight);
             adj.addEdge(fromNode, toNode, weight);
             bf.addEdge(fromNode, toNode, weight);
-            fl.addEdge(fromNode, toNode, weight);
             System.out.println ("Edge added Successfully");
         }
     }

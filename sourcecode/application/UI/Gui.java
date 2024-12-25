@@ -203,7 +203,7 @@ public class Gui {
                     bellmanFord.addNode(node);
                 }
                 for (Edge edge : graph.getEdges()) {
-                    bellmanFord.addEdge(edge.getSource(), edge.getDestination(), edge.getWeight());
+                    bellmanFord.addEdge(edge.getSource(), edge.getDestination(), edge.weight);
                 }
 
                 // Sử dụng animatePath để lấy đường đi
@@ -288,7 +288,7 @@ public class Gui {
                     flood.addNode(node);
                 }
                 for (Edge edge : graph.getEdges()) {
-                    flood.addEdge(edge.getSource(), edge.getDestination(), edge.getWeight());
+                    flood.addEdge(edge.getSource(), edge.getDestination(), edge.weight);
                 }
 
                 // Sử dụng animatePathfl để lấy đường đi

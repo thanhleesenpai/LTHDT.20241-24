@@ -11,10 +11,10 @@ public class Dijkstra extends GraphAlgorithm {
         super();
     }
 
-    public Dijkstra(boolean directed) {
-        this.directed = directed;
-        nodes = new HashSet<>();
-    }
+//    public Dijkstra(boolean directed) {
+//        this.directed = directed;
+//        nodes = new HashSet<>();
+//    }
 
     public String DijkstraShortestPath(Node start, Node end) {
 
@@ -31,7 +31,7 @@ public class Dijkstra extends GraphAlgorithm {
         }
 
         for (Edge edge : start.getEdge()) {
-            shortestPathMap.put(edge.getDestination(), edge.getWeight());
+            shortestPathMap.put(edge.getDestination(), edge.weight);
             changedAt.put(edge.getDestination(), start);
         }
 
@@ -69,10 +69,10 @@ public class Dijkstra extends GraphAlgorithm {
                     continue;
 
                 if (shortestPathMap.get(currentNode)
-                        + edge.getWeight()
+                        + edge.weight
                         < shortestPathMap.get(edge.getDestination())) {
                     shortestPathMap.put(edge.getDestination(),
-                            shortestPathMap.get(currentNode) + edge.getWeight());
+                            shortestPathMap.get(currentNode) + edge.weight);
                     changedAt.put(edge.getDestination(), currentNode);
                 }
             }
@@ -93,7 +93,7 @@ public class Dijkstra extends GraphAlgorithm {
         }
 
         for (Edge edge : start.getEdge()) {
-            shortestPathMap.put(edge.getDestination(), edge.getWeight());
+            shortestPathMap.put(edge.getDestination(), edge.weight);
             changedAt.put(edge.getDestination(), start);
         }
 
@@ -128,10 +128,10 @@ public class Dijkstra extends GraphAlgorithm {
                     continue;
 
                 if (shortestPathMap.get(currentNode)
-                        + edge.getWeight()
+                        + edge.weight
                         < shortestPathMap.get(edge.getDestination())) {
                     shortestPathMap.put(edge.getDestination(),
-                            shortestPathMap.get(currentNode) + edge.getWeight());
+                            shortestPathMap.get(currentNode) + edge.weight);
                     changedAt.put(edge.getDestination(), currentNode);
                 }
             }

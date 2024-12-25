@@ -11,15 +11,7 @@ public class Flooding extends GraphAlgorithm {
     public Flooding() {
         super(); // Gọi constructor của lớp cha
     }
-    public Flooding(boolean directed) {
-        this.directed = directed;
-        nodes = new HashSet<>();
-    }
 
-    public Flooding(boolean directed) {
-        this.directed = directed;
-        nodes = new HashSet<>();
-    }
     public Stack<Node> animatePathfl(Node start, Node end) {
         Stack<Node> path = new Stack<>();
         HashMap<Node, Node> predecessors = new HashMap<>();

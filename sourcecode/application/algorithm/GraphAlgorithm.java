@@ -7,7 +7,7 @@ import java.util.*;
 
 public class GraphAlgorithm {
     protected boolean directed;
-    protected Set<Node> nodes;
+    public Set<Node> nodes;
 
     // Constructor chung
     public GraphAlgorithm() {
@@ -43,7 +43,7 @@ public class GraphAlgorithm {
         for (Edge edge : a.getEdge()) {
             if (edge.getSource() == a && edge.getDestination() == b) {
                 // Update the value in case it's a different one now
-            	edge.setWeight(weight);
+                edge.weight = weight;
                 return;
             }
         }
