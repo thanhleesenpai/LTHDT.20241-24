@@ -1,16 +1,17 @@
-package application;
+package application.model;
+
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
-class Edge {
+public class Edge {
     Node source;
     Node destination;
-    double weight;
-    private Line line ;
-    private Text text;
-    Edge(Node s, Node d, double w) {
+    public double weight;
+    private final Line line ;
+    private final Text text;
+    public Edge(Node s, Node d, double w) {
         line = new Line();
         text = new Text();
         source = s;
@@ -35,14 +36,29 @@ class Edge {
 
     }
 
-    Line getLine() {
+    public Line getLine() {
         return line;
     }
 
-    Text getText() {
+    public Text getText() {
         return text;
     }
 
+    public Node getDestination() {
+        return destination;
+    }
+
+    public Node getSource() {
+        return source;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
     public String toString() {
         return String.format("(%s -> %s,%f)", source.name, destination.name, weight);
     }
