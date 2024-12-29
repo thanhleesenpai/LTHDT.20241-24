@@ -17,7 +17,7 @@ public class Graph {
     }
     public Node getNode(String from){
         for(Node i:nodes){
-            if(i.name.equals(from)){
+            if(i.getName().equals(from)){
                 return i;
             }
         }
@@ -26,7 +26,7 @@ public class Graph {
     public String SearchNode(String node) {
         for(Node i:nodes){
             if(i.getName().equals(node)){
-                return ("X coordinate:"+i.x+"\n"+"Y coordinate:"+i.y);
+                return ("X coordinate:"+i.getX()+"\n"+"Y coordinate:"+i.getY());
             }
         }
         return ("Node not Found");
@@ -67,7 +67,7 @@ public class Graph {
         else {
             // Kiểm tra xem cạnh đã tồn tại chưa
             for (Edge edge : fromNode.edges) {
-                if (edge.destination.equals(toNode)) {
+                if (edge.getDestination().equals(toNode)) {
                     System.out.println("Edge from " + from + " to " + to + " already exists");
                 }
             }
@@ -91,7 +91,7 @@ public class Graph {
             return;
         }
 
-        targetNode.name = newName;
+        targetNode.setName(newName);
     }
 
     public void DeleteEdge(String from, String to){
@@ -162,7 +162,7 @@ public class Graph {
                 toNode = i;
             }
         }
-        return adj.animatePathAdj(fromNode,toNode);
+        return adj.animatePath(fromNode,toNode);
     }
     public Stack<Node> getNodePathbellmanford(String from, String to){
         Node fromNode=null,toNode=null;
@@ -174,7 +174,7 @@ public class Graph {
                 toNode = i;
             }
         }
-        return bf.animatePathbf(fromNode,toNode);
+        return bf.animatePath(fromNode,toNode);
     }
     public Stack<Node> getNodePathflooding(String from, String to){
         Node fromNode=null,toNode=null;
@@ -186,6 +186,6 @@ public class Graph {
                 toNode = i;
             }
         }
-        return fl.animatePathfl(fromNode,toNode);
+        return fl.animatePath(fromNode,toNode);
     }
 }

@@ -207,7 +207,7 @@ public class Gui {
                 }
 
                 // Sử dụng animatePath để lấy đường đi
-                Stack<Node> path = bellmanFord.animatePathbf(source, target);
+                Stack<Node> path = bellmanFord.animatePath(source, target);
                 if (path == null) {
                     // Nếu path trả về null, tức là có chu trình âm
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Graph contains a negative weight cycle!", ButtonType.OK);
@@ -292,7 +292,7 @@ public class Gui {
                 }
 
                 // Sử dụng animatePathfl để lấy đường đi
-                Stack<Node> path = flood.animatePathfl(source, target);
+                Stack<Node> path = flood.animatePath(source, target);
                 if (path == null) {
                     // Nếu không tìm thấy đường đi
                     Alert alert = new Alert(Alert.AlertType.ERROR, "No path found between the selected vertices!", ButtonType.OK);

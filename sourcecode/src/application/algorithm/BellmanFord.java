@@ -15,7 +15,7 @@ public class BellmanFord extends GraphAlgorithm {
         nodes = new HashSet<>();
     }
 
-    public Stack<Node> animatePathbf(Node start, Node end) {
+    public Stack<Node> animatePath(Node start, Node end) {
         Stack<Node> path = new Stack<>();
         HashMap<Node, Double> distance = new HashMap<>();
         HashMap<Node, Node> predecessor = new HashMap<>();

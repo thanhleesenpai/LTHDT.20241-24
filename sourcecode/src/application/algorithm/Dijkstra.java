@@ -78,7 +78,7 @@ public class Dijkstra extends GraphAlgorithm {
             }
         }
     }
-    public Stack<Node> animatePathAdj(Node start, Node end) {
+    public Stack<Node> animatePath(Node start, Node end) {
 
         Stack<Node> path = new Stack<>();
         HashMap<Node, Node> changedAt = new HashMap<>();
