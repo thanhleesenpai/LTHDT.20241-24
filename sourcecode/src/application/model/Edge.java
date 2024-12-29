@@ -6,9 +6,9 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Text;
 
 public class Edge {
-    Node source;
-    Node destination;
-    double weight;
+    private Node source;
+    private Node destination;
+    private double weight;
     private final Line line ;
     private final Text text;
     public Edge(Node s, Node d, double w) {
@@ -18,10 +18,10 @@ public class Edge {
         destination = d;
         weight = w;
 
-        DoubleProperty startX = new SimpleDoubleProperty(source.x);
-        DoubleProperty startY = new SimpleDoubleProperty(source.y);
-        DoubleProperty endX = new SimpleDoubleProperty(destination.x);
-        DoubleProperty endY = new SimpleDoubleProperty(destination.y);
+        DoubleProperty startX = new SimpleDoubleProperty(source.getX());
+        DoubleProperty startY = new SimpleDoubleProperty(source.getY());
+        DoubleProperty endX = new SimpleDoubleProperty(destination.getX());
+        DoubleProperty endY = new SimpleDoubleProperty(destination.getY());
         line.startXProperty().bind(startX);
         line.startYProperty().bind(startY);
         line.endXProperty().bind(endX);
@@ -60,6 +60,6 @@ public class Edge {
         this.weight = weight;
     }
     public String toString() {
-        return String.format("(%s -> %s,%f)", source.name, destination.name, weight);
+        return String.format("(%s -> %s,%f)", source.getName(), destination.getName(), weight);
     }
 }

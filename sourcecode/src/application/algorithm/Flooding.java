@@ -16,7 +16,7 @@ public class Flooding extends GraphAlgorithm {
         nodes = new HashSet<>();
     }
 
-    public Stack<Node> animatePathfl(Node start, Node end) {
+    public Stack<Node> animatePath(Node start, Node end) {
         Stack<Node> path = new Stack<>();
         HashMap<Node, Node> predecessors = new HashMap<>();
         Set<Node> visited = new HashSet<>();

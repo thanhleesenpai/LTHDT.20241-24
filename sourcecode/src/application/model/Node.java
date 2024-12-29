@@ -8,9 +8,9 @@ import java.util.*;
 
 public class Node {
 
-    public double x;
-    public double y;
-    String name;
+    private double x;
+    private double y;
+    private String name;
     private boolean visited;
     private final Circle circle;
     private final Text text;
@@ -22,14 +22,17 @@ public class Node {
         circle.setStroke(Color.DODGERBLUE);
         circle.setPickOnBounds(false);
         text = new Text(name);
-        this.x = x;
-        this.y = y;
+        this.setX(x);
+        this.setY(y);
         this.name = name;
         visited = false;
         edges = new LinkedList<>();
     }
+    public void setName(String name) {
+		this.name = name;
+	}
 
-    public LinkedList<Edge> getEdge() {
+	public LinkedList<Edge> getEdge() {
         return edges;
     }
 
@@ -38,8 +41,8 @@ public class Node {
     }
 
     public Circle getCircle(double scale) {
-        circle.setCenterX(x * scale);
-        circle.setCenterY(y * scale);
+        circle.setCenterX(getX() * scale);
+        circle.setCenterY(getY() * scale);
         return circle;
     }
     Circle getCircle(){
@@ -63,4 +66,16 @@ public class Node {
     public void unvisited() {
         visited = false;
     }
+	public double getX() {
+		return x;
+	}
+	public void setX(double x) {
+		this.x = x;
+	}
+	public double getY() {
+		return y;
+	}
+	public void setY(double y) {
+		this.y = y;
+	}
 }

@@ -158,8 +158,8 @@ public class PrintGraph {
             if (!addNode.isSelected() && !addEdge.isSelected() && !deleteNode.isSelected() && !deleteEdge.isSelected()) {
                 circle.setCenterX(mouseEvent.getX() + dragDelta.x);
                 circle.setCenterY(mouseEvent.getY() + dragDelta.y);
-                node.x = mouseEvent.getX() + dragDelta.x;
-                node.y = mouseEvent.getY() + dragDelta.y;
+                node.setX(mouseEvent.getX() + dragDelta.x);
+                node.setY(mouseEvent.getY() + dragDelta.y);
             } else if (addEdge.isSelected()) {
                 endX.set(mouseEvent.getX());
                 endY.set(mouseEvent.getY());
@@ -235,7 +235,7 @@ public class PrintGraph {
     }
 
     private boolean isInside(double x1, double y1, Node node) {
-        double distance = Math.sqrt((x1 - node.x) * (x1 - node.x) + (y1 - node.y) * (y1 - node.y));
+        double distance = Math.sqrt((x1 - node.getX()) * (x1 - node.getX()) + (y1 - node.getY()) * (y1 - node.getY()));
         return distance < 10;
     }
 
@@ -273,7 +273,7 @@ public class PrintGraph {
     void animatePathDijkstra(Pane pane,String from,String to,String shape){
         Node fromNode = graph.getNode(from);
         Path path = new Path();
-        path.getElements().add(new MoveTo(fromNode.x,fromNode.y));
+        path.getElements().add(new MoveTo(fromNode.getX(),fromNode.getY()));
         Stack<Node> nodeStack = graph.getNodePathDijkstra(from, to);
         if(nodeStack.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -285,14 +285,14 @@ public class PrintGraph {
         else {
             while (!nodeStack.isEmpty()) {
                 Node node = nodeStack.pop();
-                path.getElements().add(new LineTo(node.x, node.y));
+                path.getElements().add(new LineTo(node.getX(), node.getY()));
             }
             graph.getAdj().resetNodesVisited();
             Shape shape1, shape2, area;
             PathTransition pathTransition = new PathTransition();
             switch (shape) {
                 case "Circle":
-                    shape1 = new Circle(fromNode.x, fromNode.y, 6, Color.TOMATO);
+                    shape1 = new Circle(fromNode.getX(), fromNode.getY(), 6, Color.TOMATO);
                     pane.getChildren().add(shape1);
                     pathTransition.setNode(shape1);
                     break;
@@ -339,7 +339,7 @@ public class PrintGraph {
     void animatePathBellmanFord(Pane pane,String from,String to,String shape){
         Node fromNode = graph.getNode(from);
         Path path = new Path();
-        path.getElements().add(new MoveTo(fromNode.x,fromNode.y));
+        path.getElements().add(new MoveTo(fromNode.getX(),fromNode.getY()));
         Stack<Node> nodeStack1 = graph.getNodePathbellmanford(from, to);
 //        while (!graph.getNodePathbellmanford(from, to).isEmpty()) {
 //            Node node = graph.getNodePathbellmanford(from, to).pop();
@@ -355,14 +355,14 @@ public class PrintGraph {
         else {
             while (!nodeStack1.isEmpty()) {
                 Node node = nodeStack1.pop();
-                path.getElements().add(new LineTo(node.x, node.y));
+                path.getElements().add(new LineTo(node.getX(), node.getY()));
             }
             graph.getBf().resetNodesVisited();
             Shape shape1, shape2, area;
             PathTransition pathTransition = new PathTransition();
             switch (shape) {
                 case "Circle":
-                    shape1 = new Circle(fromNode.x, fromNode.y, 6, Color.TOMATO);
+                    shape1 = new Circle(fromNode.getX(), fromNode.getY(), 6, Color.TOMATO);
                     pane.getChildren().add(shape1);
                     pathTransition.setNode(shape1);
                     break;
@@ -409,7 +409,7 @@ public class PrintGraph {
     void animatePathFlooding(Pane pane,String from,String to,String shape){
         Node fromNode = graph.getNode(from);
         Path path = new Path();
-        path.getElements().add(new MoveTo(fromNode.x,fromNode.y));
+        path.getElements().add(new MoveTo(fromNode.getX(),fromNode.getY()));
         Stack<Node> nodeStack = graph.getNodePathflooding(from, to);
         if(nodeStack.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -421,14 +421,14 @@ public class PrintGraph {
         else {
             while (!nodeStack.isEmpty()) {
                 Node node = nodeStack.pop();
-                path.getElements().add(new LineTo(node.x, node.y));
+                path.getElements().add(new LineTo(node.getX(), node.getY()));
             }
             graph.getFl().resetNodesVisited();
             Shape shape1, shape2, area;
             PathTransition pathTransition = new PathTransition();
             switch (shape) {
                 case "Circle":
-                    shape1 = new Circle(fromNode.x, fromNode.y, 6, Color.TOMATO);
+                    shape1 = new Circle(fromNode.getX(), fromNode.getY(), 6, Color.TOMATO);
                     pane.getChildren().add(shape1);
                     pathTransition.setNode(shape1);
                     break;

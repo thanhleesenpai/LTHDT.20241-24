@@ -92,7 +92,7 @@ public class Main extends Application {
                 userSelection = alert.showAndWait().orElse(ButtonType.CANCEL);
 
                 if (userSelection == ButtonType.OK) {
-                    gui.animateDijkstraGui(NodeUI); // Placeholder for Flooding logic
+                    gui.animateFloodGui(NodeUI); // Placeholder for Flooding logic
                 }
             }
 
